@@ -1,0 +1,7 @@
+{
+  "env": "production",
+  "port": 4000,
+  "mongo": {
+    "uri": "production"
+  }
+}
