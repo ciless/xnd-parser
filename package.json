@@ -12,11 +12,15 @@
     "lint:fix": "eslint --fix app"
   },
   "dependencies": {
+    "chokidar": "^2.0.4",
     "config": "^2.0.1",
     "dotenv": "^6.1.0",
+    "iconv": "^2.3.1",
+    "iconv-lite": "^0.4.24",
     "keymirror": "^0.1.1",
     "lodash": "^4.17.11",
-    "mongoose": "^5.3.12"
+    "mongoose": "^5.3.12",
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
