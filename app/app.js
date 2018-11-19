@@ -2,7 +2,7 @@ import connectorsInit from './connectors';
 import watcher from './helpers/watcher';
 import parser from './helpers/parser';
 import handler from './helpers/handler';
-
+import contractsController from './controllers/contracts.controller';
 import { CONTRACTS } from './config';
 
 connectorsInit();
@@ -18,6 +18,7 @@ watcher.watch(CONTRACTS, (event, contractsName, contractsPath) => {
   if (event === 'change') {
     parse(contractsPath).then((data) => {
       console.log(data);
+      contractsController.createOrUpdate(contractsName, data);
     });
   }
 });
