@@ -70,6 +70,7 @@ async function getFields(json) {
   };
 
   return {
+    id: Number(body.id),
     main: {
       id: Number(body.id),
       sim: body.phone,
