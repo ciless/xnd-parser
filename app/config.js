@@ -10,5 +10,6 @@ if (!envs[env]) {
 }
 
 const MONGO_URI = process.env.MONGO_URI || config.get('mongo.uri');
+const CONTRACTS = config.get('contracts');
 
-export { MONGO_URI };
+export { MONGO_URI, CONTRACTS };

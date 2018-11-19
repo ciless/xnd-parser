@@ -3,5 +3,9 @@
   "port": 3000,
   "mongo": {
     "uri": "mongodb://localhost:27017/xnd-cloud-api"
+  },
+  "contracts": {
+    "gsm": "\\\\192.168.1.4\\tmonitor\\",
+    "ospas": "\\\\192.168.1.5\\tmonitor\\"
   }
 }
