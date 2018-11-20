@@ -3,6 +3,7 @@ import mongooseConnector from './mongoose.connector';
 
 async function connectorsInit() {
   console.log(MONGO_URI);
+
   try {
     await mongooseConnector(MONGO_URI);
   } catch (e) {
@@ -11,4 +12,5 @@ async function connectorsInit() {
 }
 
 export { mongooseConnector };
+
 export default connectorsInit;

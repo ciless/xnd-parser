@@ -2,6 +2,6 @@
   "env": "production",
   "port": 4000,
   "mongo": {
-    "uri": "production"
+    "uri": "mongodb://localhost:27017/xnd-cloud-api"
   }
 }
