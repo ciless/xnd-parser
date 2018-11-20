@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import connectorsInit from './connectors';
 import watcher from './helpers/watcher';
 import parser from './helpers/parser';
@@ -14,11 +15,14 @@ async function parse(path) {
 }
 
 watcher.watch(CONTRACTS, (event, contractsName, contractsPath) => {
-  console.log(`[${event}] (${contractsName}) - ${contractsPath}`);
   if (event === 'change') {
-    parse(contractsPath).then((data) => {
-      console.log(data);
-      contractsController.createOrUpdate(contractsName, data);
-    });
+    parse(contractsPath)
+      .then((data) => {
+        console.log(`[${data.id} | OK]`);
+        contractsController.createOrUpdate(contractsName, data);
+      })
+      .catch((error) => {
+        console.log(`[${contractsPath} | ERROR]`);
+      });
   }
 });
