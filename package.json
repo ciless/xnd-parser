@@ -20,6 +20,7 @@
     "global": "^4.3.2",
     "iconv": "^2.3.1",
     "iconv-lite": "^0.4.24",
+    "intel": "^1.2.0",
     "keymirror": "^0.1.1",
     "lodash": "^4.17.11",
     "mongoose": "^5.3.12",

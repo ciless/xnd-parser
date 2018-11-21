@@ -80,7 +80,7 @@ async function getFields(json) {
       state: Number(body.tag[0].value),
       enabled: !!body.disable,
       signal: body.tag[2].lastsms,
-      timer: Number(body.tag[4].value),
+      timer: Number(body.tag[4].value) || 24,
     },
     contract: {
       type: contractInfo.categoria,
