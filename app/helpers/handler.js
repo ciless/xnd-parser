@@ -34,6 +34,33 @@ function getDevice(parser) {
   return realDevice;
 }
 
+function getChop(region) {
+  const regionLower = region.toLowerCase();
+
+  if (
+    regionLower.indexOf('больш') !== -1 ||
+    regionLower.indexOf('горе') !== -1
+  ) {
+    return 'Единство';
+  } else if (
+    regionLower.indexOf('повар') !== -1 ||
+    regionLower.indexOf('зуб') !== -1 ||
+    regionLower.indexOf('горк') !== -1
+  ) {
+    return 'Единство Плюс';
+  } else if (
+    regionLower.indexOf('менд') !== -1 ||
+    regionLower.indexOf('зел') !== -1
+  ) {
+    return 'Багира';
+  } else if (
+    regionLower.indexOf('лобн') !== -1 ||
+    regionLower.indexOf('пояр') !== -1
+  ) {
+    return 'Багира Плюс';
+  } else return 'Единство';
+}
+
 async function getFields(json) {
   const body = _.pick(json, [
     'id',
@@ -88,10 +115,11 @@ async function getFields(json) {
       region: contractInfo.otv,
       address: contractInfo.address,
       info: contractInfo.comment,
+      chop: getChop(contractInfo.otv),
     },
     geo: {
-      lat: body.lat,
-      lng: body.lon,
+      lat: Number(body.lat),
+      lng: Number(body.lon),
     },
     tech: {
       device: getDevice(body.eventparser),
