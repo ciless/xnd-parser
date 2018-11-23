@@ -7,9 +7,9 @@ export default {
 
     const contract = await Contract.findOne({ id: data.id });
     if (contract) {
-      Contract.updateOne({ id: data.id }, newContract);
+      await Contract.updateOne({ id: data.id }, newContract);
     } else {
-      Contract.create(newContract);
+      await Contract.create(newContract);
     }
   },
 };
