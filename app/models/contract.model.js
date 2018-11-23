@@ -7,6 +7,7 @@ const ContractSchema = new Schema({
 
   id: {
     type: Number,
+    unique: true,
   },
   main: {
     id: {
@@ -46,16 +47,19 @@ const ContractSchema = new Schema({
     address: {
       type: String,
     },
+    chop: {
+      type: String,
+    },
     info: {
       type: String,
     },
   },
   geo: {
     lat: {
-      type: String,
+      type: Number,
     },
     lng: {
-      type: String,
+      type: Number,
     },
   },
   tech: {
